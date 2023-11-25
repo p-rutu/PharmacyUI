@@ -1,0 +1,102 @@
+<div class="Container" style="color:whitesmoke; background-color: rgb(186, 222, 245); padding: 10px;">
+    <div class="row">
+        <div class="col-md-10">
+            <h1 style="text-align: center;  color: black; margin-left: 30px;">Sign Up Page</h1>
+        </div>
+        <div class="col-md-2">
+            <button type="button" [routerLink]="['/home']" style="padding: 5px; width:80px; margin: 10px;"
+                class="btn btn-primary">Back</button>
+            <img class="logo" style="width: 70px; height: 50px;" src="../assets/images/login.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row content">
+        <div class="col-md-6 mb-3">
+            <img src="../assets/images/loginimage.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-6 mb-3">
+            <h3 class="Login-text mb-3">Sign Up</h3>
+
+
+
+            <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)" novalidate>
+                <div class="form-group">
+                    <label for="userName">Doctor Name*</label>
+                    <input type="text" id="userName" name="userName" class="form-control" #userName="ngModel" [(ngModel)]="doctor.userName" required required minlength="5">
+                    <div *ngIf="!userName?.valid && (userName?.dirty || userName?.touched)" class="error">
+                        <div class="text-danger" *ngIf="userName.errors?.required ">
+                            Name is required
+                        </div>
+                        <div class="text-danger" *ngIf="userName.errors?.minlength">
+                            Name Minimum Length is {{userName.errors?.minlength?.requiredLength}}
+                        </div>
+                    </div>
+
+
+
+                    
+            
+            
+                    <label for="email">Email*</label>
+                    <input type="email" name="userEmail" class="form-control" #EmailId="ngModel" [(ngModel)]="doctor.userEmail"
+                        required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
+                    <span class="text-danger"
+                        *ngIf="(EmailId.touched || userRegistrationForm.submitted) && EmailId.errors?.required">
+                        Email is required
+                    </span>
+                    <span class="text-danger" *ngIf="EmailId.touched && EmailId.errors?.pattern">
+                        Enter a valid email address
+                    </span>
+                    <br>
+            
+            
+            
+                    <label>Contact*</label>
+                    <input type="text" required minlength="10" required maxlength="10" name="userContact" class="form-control" #contact="ngModel" [(ngModel)]="doctor.userContact">
+                    <span class="text-danger" *ngIf="(contact.touched || userRegistrationForm.submitted) && contact.errors?.minlength">
+                        minlength 10 is required
+                    </span>
+                    <br>
+            
+                    <label>Address*</label>
+                    <input type="text" name="userAddress" class="form-control" #address="ngModel" [(ngModel)]="doctor.userAddress">
+                    <br>
+            
+            
+                    <label for="password">Password*</label>
+                    <input type="password" name="userPassword" class="form-control" #password="ngModel" [(ngModel)]="doctor.userPassword"
+                        required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$">
+                    <span class="text-danger"
+                        *ngIf="(password.touched || userRegistrationForm.submitted) && password.errors?.required">
+                        Password is required
+                    </span>
+                    <span class="text-danger" *ngIf="password.touched && password.errors?.pattern">
+                        Password should be atleast 8 characters
+                        long and should contain one number,one character and one special
+                        character
+                    </span>
+            
+            
+                </div>
+                <br>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn-large btn-submit" [disabled]="!userRegistrationForm.valid" type="submit" >Submit</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--<div class="Container" style="color:whitesmoke; text-align: center;  background-color: #0bc1f9; padding: 10px;">
+    <footer><span class="text-danger"><strong>This site is copyright to CPG, All rights are reserved
+                here.</strong></span></footer>
+</div>-->

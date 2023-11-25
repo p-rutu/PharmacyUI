@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e91e63;
+
+
+}
+
+.drugstable .OrdersDesign{
+    position: relative;
+    border: #424242;
+    border-width: 10px;
+    background-color: #74d1f6;
+    height:100px;
+    width: 70rem;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 20px;
+}
+.drugstable .OrdersDesign .invoice{
+    position: relative;
+    left: 60rem;
+    top:-100px;
+   
+    background-color: #000000;
+    color:white;
+}
+
+.content {
+    height: 490px;
+
+    margin: 3%;
+    background-color:rgb(147, 198, 243);
+    padding: 4rem 1rem 4rem 1rem;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.boxContainer {
+    background-color: white;
+    position: relative;
+    top: -40px;
+    width: 300px;
+    height: 50px;
+    border: 4px solid #2980b9;
+    padding: 4px 5px;
+    border-radius: 50px;
+}
+
+#elementsContainer {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    color: aliceblue;
+}
+
+#addsupplier {
+    position: relative;
+    top: -34px;
+    left: 1000px;
+}
+
+.Search {
+    border: none;
+    border-radius: 50px;
+    height: 100%;
+    width: 100%;
+    padding: 0px 5px;
+    font-size: 18px;
+    font-family: "Nunito";
+    color: #424242;
+    font-weight: 500;
+}
+
+.Search:focus {
+    outline: none;
+}
+
+#material-icons {
+    font-size: 26;
+    color: #2980b9;
+}
+
+/* th{
+    position:sticky;
+    top:0px;
+} */
+.containers .drugstable {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+
+}
+
+th {
+    border: solid;
+    border-width: 1px;
+
+    border-color: rgb(56, 49, 52);
+}
+
+td {
+    border: solid;
+    border-width: 1px;
+}
+
+.confirm {
+    background-color: rgb(38, 160, 133);
+    color: #d9e6f0;
+    border-radius: 5px;
+    padding: 3px;
+    width: 100px;
+    border-color: rgb(249, 252, 245);
+    font-size: 16px;
+    font-weight: 800;
+
+}
+
+.modal-content {
+    height: 600px;
+    background-color: #BBD6EC;
+}
+
+h1{
+    text-shadow: 2px 2px 4px rgba(45, 14, 77, 0.1),
+                3px 4px 4px rgba(45, 14, 77, 0.1),
+                4px 6px 4px rgba(45, 14, 77, 0.1),
+                5px 8px 4px rgba(45, 14, 77, 0.1);
+}

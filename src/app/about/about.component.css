@@ -1,0 +1,17 @@
+.bgrim {
+    width: 100%;
+    height: 650px;
+   
+}
+.container p{
+    padding: 10px 40px;
+    font-size: 30px;
+    font-weight: 400;
+    color: black;
+}
+h1{
+    text-shadow: 2px 2px 4px rgba(45, 14, 77, 0.1),
+                3px 4px 4px rgba(45, 14, 77, 0.1),
+                4px 6px 4px rgba(45, 14, 77, 0.1),
+                5px 8px 4px rgba(45, 14, 77, 0.1);
+}

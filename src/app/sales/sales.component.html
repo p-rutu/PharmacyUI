@@ -1,0 +1,66 @@
+
+<div class="Container" style="color:whitesmoke; background-color: rgb(186, 222, 245); padding: 10px;">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 style="color: black; text-align: center; margin-left: 30px;">Sales Report </h1>
+        </div>
+        <div class="col-md-3">
+            
+                
+            
+            <button type="button" [routerLink]="['/admindrug']" style="margin: 10px;" class="btn btn-primary">Back</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row content">
+        
+        <div class="drugstable">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <h4>DrugId</h4>
+                        </th>
+                        <th>
+                            <h4>DrugName</h4>
+                        </th>
+                        <th>
+                            <h4>Total Quantity</h4>
+                        </th>
+                        <th>
+                            <h4>Total Price</h4>
+                        </th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let x of drugk"  >
+                        <td >
+                           {{x.drugId}}
+                        </td>
+                        <td>
+                            {{x.drugName}}
+                        </td>
+                        <td >
+                            
+                            {{TotalQuant(x.drugId)}}
+                        </td>
+                        <td >
+                            {{TotalAmount(x.drugId)}}
+                        </td>
+                        
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!--<div class="Container" style="color:whitesmoke; text-align: center;  background-color: #0bc1f9; padding: 10px;">
+    <footer><span class="text-danger"><strong>This site is copyright & copy;to LTI.All rights are reserved
+                here..</strong></span></footer>
+</div>-->

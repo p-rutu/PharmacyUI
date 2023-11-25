@@ -1,0 +1,198 @@
+<div class="Containers" style="color:whitesmoke; background-color: rgb(186, 222, 245); padding: 10px;">
+    <div class="row">
+        <div class="col-md-10">
+            <h1 style="color: black; text-align: center; margin-left: 30px;">Picked Up</h1>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                New Orders
+            </button>
+            
+            <!-- Modal -->
+            <div id=modal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Daily Updates</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="drugstable">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>
+                                                <h4>user Id</h4>
+                                            </th>
+                                            
+                                            <th>
+                                                <h4>Drug Id</h4>
+                                            </th>
+                                            <th>
+                                                <h4>Drug Name</h4>
+                                            </th>
+                                            <th>
+                                                <h4>Quantity</h4>
+                                            </th>
+                                            <th>
+                                                <h4>Total Amount</h4>
+                                            </th>
+                                            
+                                            <th>
+                                                <h4>Update</h4>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let x of NewData">
+                                            
+                                            <td>
+                                                {{x.userId}}
+                                            </td>
+                                            
+                                            <td>
+                                                {{x.drugId}}
+                                            </td>
+                                            <td>
+                                                {{x.drugName}}
+                                            </td>
+                            
+                                            <td>
+                                                {{x.quantity}}
+                            
+                                            </td>
+                                            <td>
+                                                Rs {{x.totalPrice}}
+                                            </td>
+                                            
+                                            <td>
+                                                <button class="btn btn-danger"  style="margin: 0px 10px;">Cancel</button>
+                                                <button class = "btn btn-primary"  (click)="delete(x,x.drugId,x.quantity)">Conform</button>
+                                            </td>
+                            
+                                        </tr>
+                                    </tbody>
+                                    
+                                </table>
+                                
+                            </div>
+            
+                            
+            
+            
+            
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <button type="button" [routerLink]="['/admin']" style="padding: 5px; width:80px; margin: 10px;"
+                class="btn btn-primary">back</button>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+<br>
+
+
+<div class="rowcontents">
+    <div class="container">
+        <div class="row_content">
+            
+
+
+            <div class="drugstable" >
+                <table class="table table-bordered" id="PDFbtnDiv">
+                    <thead>
+                        <tr>
+                            <th>
+                                <h4>Order Id</h4>
+                            </th>
+                            <th>
+                                <h4>user Id</h4>
+                            </th>
+                            <th>
+                                <h4>User Name</h4>
+                            </th>
+                            <th>
+                                <h4>Drug Id</h4>
+                            </th>
+                            <th>
+                                <h4>Drug Name</h4>
+                            </th>
+                            <th>
+                                <h4>Quantity</h4>
+                            </th>
+                            <th>
+                                <h4>Order Date</h4>
+                            </th>
+                            <th>
+                                <h4>Total Amount</h4>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let x of fulldata" >
+                            <td>
+                                {{x.orderId}}
+                            </td>
+                            <td>
+                                {{x.userId}}
+                            </td>
+                            <td>
+                                {{x.userName}}
+                            </td>
+                            <td>
+                                {{x.drugId}}
+                            </td>
+                            <td>
+                                {{x.drugName}}
+                            </td>
+            
+                            <td>
+                                {{x.quantity}}
+            
+                            </td>
+                            <td>
+                                {{x.orderDate | date:'shortDate'}}
+                            </td>
+                            <td>
+                                Rs {{x.totalPrice}}
+                            </td>
+            
+                        </tr>
+                    </tbody>
+            
+                </table>
+                <div class="total" style="position: relative; left: 800px;">
+                    <h3> TotalAmount = {{(totalAmount) }}</h3>
+                </div>
+                <div class="download" style="position: relative; left: 800px;">
+                    <button id="salesdwnldbtn" type="button" class="btn btn-primary" (click)="PDFbtn()">Download Sales</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--<div class="cus-footer" style="color:whitesmoke; text-align: center;  background-color: #0bc1f9; padding: 10px;">
+    <footer><span class="text-danger"><strong>This site is copyright & copy;to LTI.All rights are reserved
+                here..</strong></span></footer>
+</div>-->
+

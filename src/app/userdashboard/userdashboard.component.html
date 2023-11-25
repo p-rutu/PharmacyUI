@@ -1,0 +1,94 @@
+<div class="Container" style="color:whitesmoke; background-color: rgb(186, 222, 245); padding: 10px;">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 style="color: black; text-align: center; margin-left: 30px;">Welcome  </h1>
+        </div>
+        <div class="col-md-3">
+            <button type="button" (click)=" _authservice.logoutUser()" [routerLink]="['/home']" style="padding: 5px; width:80px; margin: 10px;"
+                class="btn btn-primary">Logout</button>
+            <button type="button" [routerLink]="['/Buy']" ><i class="fa-solid fa-cart-plus"></i></button>
+            <button type="button" [routerLink]="['/mycart']" style="margin: 10px;" class="btn btn-primary">My Orders</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row content">
+       <div class="boxContainer">
+        <table class="elementsContainer">
+            <tr>
+                <td>
+                    <input type="text" placeholder="Search Drug" class="Search" [(ngModel)]="filteredString">
+                </td>
+                <td>
+                    <a href="#"><i class="fa-solid fa-magnifying-glass-plus" id="material-icons"></i></a>
+                </td>
+            </tr>
+        </table>
+       </div>
+       <br>
+    <div class="table-wrapper">
+
+
+        
+    </div>
+    <div class="drugstable">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        <h4>DrugId</h4>
+                    </th>
+                    <th>
+                        <h4>DrugName</h4>
+                    </th>
+                    <th>
+                        <h4>Expiry Date</h4>
+                    </th>
+                    <th>
+                        <h4>Quantity</h4>
+                    </th>
+                    <th>
+                        <h4>price</h4>
+                    </th>
+                    
+                    <th>
+                        <h4>Buy Now</h4>
+                    </th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr  *ngFor="let drugk of drugs | filter:filteredString">
+                    <td >
+                        <span>{{drugk.drugId}}</span>
+                    </td>
+                    <td>
+                       {{drugk.drugName}}
+                    </td>
+                    <td>
+                        {{drugk.expiryDate| date:'shortDate'}}
+                    </td>
+                    <td >
+                        {{drugk.quantity}}
+                        <!-- <input type="number" value="1" name="number" style="width:70px; " max="100" min="1" step="1" [(ngModel)]="quantity"> -->
+                    </td>
+                    <td>
+                        {{drugk.price}}
+                    </td>
+                    
+                    <td >
+                        <button type="button"  (click)="SendDrugData(drugk)"><i class="fa-solid fa-cart-plus"></i>Add to Cart</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    </div>
+    
+</div>
+
+<!--<div class="Container" style="color:whitesmoke; text-align: center;  background-color: #0bc1f9; padding: 10px;">
+    <footer><span class="text-danger"><strong>This site is copyright & copy;to LTI.All rights are reserved
+                here..</strong></span></footer>
+</div>-->

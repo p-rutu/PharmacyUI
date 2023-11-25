@@ -1,0 +1,76 @@
+<div class="Container" style="color:whitesmoke; background-color: rgb(186, 222, 245); padding: 10px;">
+    <div class="row">
+        <div class="col-md-10">
+            <h1 style="text-align: center;  color: black; margin-left: 30px;">Login Page</h1>
+        </div>
+        <div class="col-md-2">
+            <button type="button" [routerLink]="['/home']" style="padding: 5px; width:80px; margin: 10px;"
+                class="btn btn-primary">Back</button>
+            <img class="logo" style="width: 70px; height: 50px;" src="../assets/images/login.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row content">
+        <div class="col-md-6 mb-3">
+            <img src="../assets/images/loginimage.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-6 mb-3">
+            <h3 class="Login-text mb-3">Login</h3>
+
+            <form class="col s12 white" #userLoginForm="ngForm">
+
+                <div class="dropdown">
+                    <label for="lang">Please Choose Your Role</label>
+                    <br><br>
+                    <select name="role" id="lang" #role="ngModel" [(ngModel)]="login.role">
+                        <option value="" disabled selected hidden>Select a Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Doctor">Doctor</option>
+                    </select>
+                </div>
+
+
+                <br>
+
+                <div class="form-group" >
+                    <label for="email">Email*</label>
+                    <input type="email" name="emailId" class="form-control" #EmailId="ngModel"
+                        [(ngModel)]="login.emailId" required >
+                    <span class="text-danger"
+                        *ngIf="(EmailId.touched || userLoginForm.submitted) && (EmailId.errors?.required)">
+                        Email is required
+                    </span>
+                    <span class="text-danger" *ngIf="EmailId.touched && EmailId.errors?.EmailId">
+                        Enter a valid email address
+                    </span>
+
+
+                    <br>
+                    <label for="password">Password*</label>
+                    <input type="password" name="password" class="form-control" #password="ngModel"
+                        [(ngModel)]="login.password" required>
+                    <span class="text-danger"
+                        *ngIf="(password.touched || userLoginForm.submitted) && password.errors?.required">
+                        Password is required
+                    </span>
+                    <span class="text-danger" *ngIf="password.touched && password.errors?.invalidPassword">
+                        Password should have minimum 7 characters
+                    </span>
+
+                </div>
+                <br>
+
+                <br>
+                <button class="btn btn-class" (click)="OnSubmit(userLoginForm)">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="Container" style="color:whitesmoke; text-align: center;  background-color: #0bc1f9; padding: 10px;">
+    <footer><span class="text-danger"><strong>This site is copyright & copy;to LTI.All rights are reserved
+                here..</strong></span></footer>
+</div>-->
